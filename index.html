@@ -10,20 +10,8 @@
 </head>
 
 <!--
-    Lägg till:
-
-    Error messages 
-        Password espc
-    Javascript to check password fields match each other 
-        error msg replaces other when not matched
-    add JS that turns error msg unhidden when invalid output
-
-
-
     Fix:
         resize window height messes with logo position and image resizing
-        :invalid not applying to invalid phonennr ? 
-        förnamn works when fixing name to valud, not efternamn (style remains even if name is valid)
 -->
 <body>
     <div class="image-section" id="image-section">
@@ -66,31 +54,31 @@
                     <legend>Gå med!</legend>
                     <div class="form1">
                     <label for="first-name">Förnamn</label>
-                    <input type="text" class="first-name" name="first-name" placeholder="Anders" minlength="1" maxlength="30" pattern="^([^0-9]*)$" required autofocus>
+                    <input type="text" class="first-name" name="first-name" placeholder="Anders" minlength="1" maxlength="30" pattern="^([^0-9]*)$" required autofocus />
                     <p class="err1">Ogiltigt namn</p>
                     <!--Validate so no numbers are included
                     Write JS to alert when over or under character limit & unvalid char-->
                 </div><div class="form2"><label for="last-name">Efternamn</label>
-                    <input type="text" class="last-name" name="last-name" placeholder="Svensson" minlength="1" maxlength="30" pattern="^([^0-9]*)$" required oninvalid="this.setCustomValidity('Bara bokstäver får användas')">
+                    <input type="text" class="last-name" name="last-name" placeholder="Svensson" minlength="1" maxlength="30" pattern="^([^0-9]*)$" required />
                     <p class="err2">Ogiltigt namn</p>
                     <!--as above-->
                 </div><div class="form3"><label for="email">Email</label>
-                    <input type="email" class="email" name="email" placeholder="anders@gmail.com" required oninvalid="this.setCustomValidity('En godkänt email-address krävs')">
-                    <p class="err3">Ogiltigt telefonnummer</p>
+                    <input type="email" class="email" name="email" placeholder="anders@gmail.com" required />
+                    <p class="err3">Ogiltig email</p>
                     <!--Email validation? 
                     alert? -->
                     </div><div class="form4"><label for="phone">Telefonnummer</label>
-                    <input type="tel" class="phone" name="phone" placeholder="0701234567" patter="^[0-9]{10}$" oninvalid="this.setCustomValidity('Skriv telefonnummer utan mellanslag och bindesträck')">
-                    <p class="err4">Ogiltig email-address</p>
+                    <input type="tel" class="phone" name="phone" placeholder="0701234567" pattern="^[0-9]{10}$" />
+                    <p class="err4">Ogiltig telefonnummer</p>
                     <!--Better pattern validation 
                     alert?-->
                    </div> <div class="form5"><label for="password">Lösenord</label>
-                    <input type="password" class="password1" id="password" name="password" minlength="8" required oninvalid="this.setCustomValidity('Minst 8 tecken, varav en blandning av bokstäver och siffror')">
+                    <input type="password" class="password1" id="password" name="password" minlength="8" required />
                     <p class="err5">Ogiltigt lösenord</p>
                     <!--Pattern validation (must have x X 28)
                     alert?-->
                     </div><div class="form6"><label for="password-sec">Bekräfta lösenord</label>
-                    <input type="password" class="password2" id="password-sec" name="password-sec" required oninvalid="this.setCustomValidity('Minst 8 tecken, varav en blandning av bokstäver och siffror')">
+                    <input type="password" class="password2" id="password-sec" name="password-sec" required />
                     <!--Pattern validation against first password? 
                     Alert?--></div>
                 </fieldset>
