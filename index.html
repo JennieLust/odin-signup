@@ -6,7 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up!</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
+
+<!--
+    Lägg till:
+
+    Error messages 
+        Password espc
+    Javascript to check password fields match each other 
+        error msg replaces other when not matched
+    add JS that turns error msg unhidden when invalid output
+
+
+
+    Fix:
+        resize window height messes with logo position and image resizing
+        :invalid not applying to invalid phonennr ? 
+        förnamn works when fixing name to valud, not efternamn (style remains even if name is valid)
+-->
 <body>
     <div class="image-section" id="image-section">
         <img src="./img.jpg">
@@ -48,37 +66,41 @@
                     <legend>Gå med!</legend>
                     <div class="form1">
                     <label for="first-name">Förnamn</label>
-                    <input type="text" name="first-name" placeholder="Anders" minlength="1" maxlength="30" pattern="^([^0-9]*)$" required autofocus>
+                    <input type="text" class="first-name" name="first-name" placeholder="Anders" minlength="1" maxlength="30" pattern="^([^0-9]*)$" required autofocus>
+                    <p class="err1">Ogiltigt namn</p>
                     <!--Validate so no numbers are included
                     Write JS to alert when over or under character limit & unvalid char-->
                 </div><div class="form2"><label for="last-name">Efternamn</label>
-                    <input type="text" name="last-name" placeholder="Svensson" minlength="1" maxlength="30" pattern="^([^0-9]*)$" required>
+                    <input type="text" class="last-name" name="last-name" placeholder="Svensson" minlength="1" maxlength="30" pattern="^([^0-9]*)$" required oninvalid="this.setCustomValidity('Bara bokstäver får användas')">
+                    <p class="err2">Ogiltigt namn</p>
                     <!--as above-->
                 </div><div class="form3"><label for="email">Email</label>
-                    <input type="email" name="email" placeholder="anders@gmail.com" required>
+                    <input type="email" class="email" name="email" placeholder="anders@gmail.com" required oninvalid="this.setCustomValidity('En godkänt email-address krävs')">
+                    <p class="err3">Ogiltigt telefonnummer</p>
                     <!--Email validation? 
                     alert? -->
                     </div><div class="form4"><label for="phone">Telefonnummer</label>
-                    <input type="tel" name="phone" placeholder="0701234567" patter="^[0-9]{10}$">
+                    <input type="tel" class="phone" name="phone" placeholder="0701234567" patter="^[0-9]{10}$" oninvalid="this.setCustomValidity('Skriv telefonnummer utan mellanslag och bindesträck')">
+                    <p class="err4">Ogiltig email-address</p>
                     <!--Better pattern validation 
                     alert?-->
                    </div> <div class="form5"><label for="password">Lösenord</label>
-                    <input type="password" id="password" name="password" minlength="8" required>
+                    <input type="password" class="password1" id="password" name="password" minlength="8" required oninvalid="this.setCustomValidity('Minst 8 tecken, varav en blandning av bokstäver och siffror')">
+                    <p class="err5">Ogiltigt lösenord</p>
                     <!--Pattern validation (must have x X 28)
                     alert?-->
                     </div><div class="form6"><label for="password-sec">Bekräfta lösenord</label>
-                    <input type="password" id="password-sec" name="password-sec" required>
+                    <input type="password" class="password2" id="password-sec" name="password-sec" required oninvalid="this.setCustomValidity('Minst 8 tecken, varav en blandning av bokstäver och siffror')">
                     <!--Pattern validation against first password? 
                     Alert?--></div>
                 </fieldset>
-            </form>
+            
         </div>
         <div class="button-area">
-            <input type="submit" value="submit">
-            <button type="submit" onclick="alert('Tack för ditt förtroende')">Bli medlem</button>
+            <input type="submit" value="Gå med!" name="submission" class="submit-button">
             <p>Har du redan ett konto? <a href="">Logga in</a> </p>
         </div>
-
+    </form>
 
 
     </div>

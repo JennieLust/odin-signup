@@ -99,6 +99,7 @@ svg {
     flex-shrink: 0;
     top:220px;
 
+
 }
 
 fieldset {
@@ -119,7 +120,26 @@ fieldset > div {
     max-width: 300px;
 }
 
-@media only screen and (max-width: 768px) {
+fieldset > div > input {
+    height: 28px;
+}
+
+fieldset > div > input:focus {
+    -webkit-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.44); 
+    box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.44);
+}
+
+fieldset > div > p {
+    color: #21241a;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+    display: hidden;
+    margin-top: 2px;
+    margin-bottom: 5px;
+
+}
+
+@media only screen and (max-width: 600px) {
 .image-section {
     display: none;
 
@@ -175,4 +195,19 @@ label {
 
 a {
     color: #495130;
+}
+
+.submit-button {
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 130px;
+    height: 35px;
+    background-color:#495130;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.57); 
+    box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.57);
+
+
 }
